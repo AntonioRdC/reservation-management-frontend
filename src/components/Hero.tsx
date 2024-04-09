@@ -1,12 +1,11 @@
 'use client';
 
 import { AiOutlineWhatsApp } from 'react-icons/ai';
-
-import { Button } from '@/components/ui/button';
-import { buttonVariants } from '@/components/ui/button';
 import Image from 'next/image';
 import Link from 'next/link';
 import { BiLogIn } from 'react-icons/bi';
+
+import { buttonVariants } from '@/components/ui/button';
 
 export const Hero = () => {
   return (

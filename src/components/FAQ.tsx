@@ -1,10 +1,12 @@
+'use client';
+
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from '@/components/ui/accordion';
-import { Separator } from '@/components/ui/separator';
+import { SeparatorComponents } from '@/components/SeparatorComponents';
 
 interface FAQProps {
   question: string;
@@ -28,37 +30,38 @@ const FAQList: FAQProps[] = [
 
 export const FAQ = () => {
   return (
-    <section id="faq" className="container">
-      <Separator className="w-[95%] my-20" />
+    <>
+      <SeparatorComponents />
+      <section id="faq" className="container">
+        <h2 className="text-3xl md:text-4xl font-bold mb-4">
+          <span className="bg-gradient-to-r from-[#F596D3]  to-[#D247BF] text-transparent bg-clip-text">
+            Perguntas{' '}
+          </span>
+          frequentes
+        </h2>
 
-      <h2 className="text-3xl md:text-4xl font-bold mb-4">
-        <span className="bg-gradient-to-r from-[#F596D3]  to-[#D247BF] text-transparent bg-clip-text">
-          Perguntas{' '}
-        </span>
-        frequentes
-      </h2>
+        <Accordion type="single" collapsible className="w-full AccordionRoot">
+          {FAQList.map(({ question, answer }: FAQProps, value) => (
+            <AccordionItem key={value} value={String(value)}>
+              <AccordionTrigger className="text-left">
+                {question}
+              </AccordionTrigger>
 
-      <Accordion type="single" collapsible className="w-full AccordionRoot">
-        {FAQList.map(({ question, answer }: FAQProps, value) => (
-          <AccordionItem key={value} value={String(value)}>
-            <AccordionTrigger className="text-left">
-              {question}
-            </AccordionTrigger>
+              <AccordionContent>{answer}</AccordionContent>
+            </AccordionItem>
+          ))}
+        </Accordion>
 
-            <AccordionContent>{answer}</AccordionContent>
-          </AccordionItem>
-        ))}
-      </Accordion>
-
-      <h3 className="font-medium mt-4">
-        Ainda tem perguntas?{' '}
-        <a
-          href="#"
-          className="text-primary transition-all border-primary hover:border-b-2"
-        >
-          Entre em contato conosco
-        </a>
-      </h3>
-    </section>
+        <h3 className="font-medium mt-4">
+          Ainda tem perguntas?{' '}
+          <a
+            href="#"
+            className="text-primary transition-all border-primary hover:border-b-2"
+          >
+            Entre em contato conosco
+          </a>
+        </h3>
+      </section>
+    </>
   );
 };

@@ -49,7 +49,7 @@ export const Navbar = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
   return (
-    <header className="sticky border-b-[1px] top-0 z-40 w-full bg-white dark:border-b-zinc-700 dark:bg-background">
+    <header className="sticky border-b-[1px] top-0 z-40 w-full bg-background border-b-purple-800 dark:border-b-green-800">
       <NavigationMenu className="mx-auto">
         <NavigationMenuList className="container h-14 px-4 w-screen flex justify-between ">
           <NavigationMenuItem className="font-bold flex">
