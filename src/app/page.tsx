@@ -1,7 +1,17 @@
+import { Features } from '@/components/Features';
+import { Footer } from '@/components/Footer';
+import { Hero } from '@/components/Hero';
+import { Navbar } from '@/components/Navbar';
+import { News } from '@/components/News';
+
 export default function Home() {
   return (
     <main>
-      <div></div>
+      <Navbar />
+      <Hero />
+      <News />
+      <Features />
+      <Footer />
     </main>
   );
 }

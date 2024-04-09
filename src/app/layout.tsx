@@ -1,9 +1,11 @@
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+import { Nunito } from 'next/font/google';
 
+import { cn } from '@/lib/utils';
+import { ThemeProvider } from '@/components/theme-provider';
 import './globals.css';
 
-const inter = Inter({ subsets: ['latin'] });
+const nunito = Nunito({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: 'Reservation Management',
@@ -17,7 +19,21 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-br">
-      <body className={inter.className}>{children}</body>
+      <body
+        className={cn(
+          'min-h-screen bg-background font-sans antialiased',
+          nunito.className,
+        )}
+      >
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          {children}
+        </ThemeProvider>
+      </body>
     </html>
   );
 }
