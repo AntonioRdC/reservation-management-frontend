@@ -51,11 +51,11 @@ export const Features = () => {
     >
       <Separator className="w-[95%] my-20" />
       <h2 className="text-3xl lg:text-4xl font-bold md:text-center mb-4">
-        <span className="bg-gradient-to-b from-primary/60 to-primary text-transparent bg-clip-text">
+        <span className="bg-gradient-to-r from-[#F596D3]  to-[#D247BF] text-transparent bg-clip-text">
           Reservas
         </span>{' '}
         e{' '}
-        <span className="bg-gradient-to-b from-primary/60 to-primary text-transparent bg-clip-text">
+        <span className="bg-gradient-to-r from-[#61DAFB] to-[#5FC52E] text-transparent bg-clip-text">
           Ferramentas
         </span>{' '}
         disponíveis

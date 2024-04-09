@@ -20,7 +20,7 @@ export const Hero = () => {
             de Espaços na cidade de
           </h1>{' '}
           <h2 className="inline">
-            <span className="inline bg-gradient-to-r from-[#61DAFB] via-[#1fc0f1] to-[#03a3d7] text-transparent bg-clip-text">
+            <span className="inline bg-gradient-to-r from-[#61DAFB] to-[#5FC52E] text-transparent bg-clip-text">
               Ariquemes
             </span>
             /RO
