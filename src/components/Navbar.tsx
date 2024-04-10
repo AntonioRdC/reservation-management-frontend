@@ -18,7 +18,7 @@ import {
   SheetTitle,
   SheetTrigger,
 } from '@/components/ui/sheet';
-import { buttonVariants } from '@/components/ui/button';
+import { Button, buttonVariants } from '@/components/ui/button';
 import { ThemeToggle } from '@/components/ThemeToggle';
 
 interface RouteProps {
@@ -77,24 +77,21 @@ export const Navbar = () => {
                   </SheetTitle>
                 </SheetHeader>
                 <nav className="flex flex-col justify-center items-center gap-2 mt-4">
-                  {routeList.map(({ href, label }: RouteProps) => (
-                    <Link
-                      key={label}
-                      href={href}
-                      onClick={() => setIsOpen(false)}
-                      className={buttonVariants({ variant: 'ghost' })}
-                    >
-                      {label}
+                  {routeList.map(({ href, label }: RouteProps, index) => (
+                    <Link key={index} href={href}>
+                      <Button
+                        variant={'ghost'}
+                        onClick={() => setIsOpen(false)}
+                      >
+                        {label}
+                      </Button>
                     </Link>
                   ))}
-                  <Link
-                    href="/auth/login"
-                    className={`w-[110px] border ${buttonVariants({
-                      variant: 'outline',
-                    })}`}
-                  >
-                    <BiLogIn className="mr-2 w-5 h-5" />
-                    Fazer Login
+                  <Link href="/auth/login">
+                    <Button variant={'outline'} className="w-[110px] border">
+                      <BiLogIn className="mr-2 w-5 h-5" />
+                      Fazer Login
+                    </Button>
                   </Link>
                 </nav>
               </SheetContent>
@@ -103,27 +100,22 @@ export const Navbar = () => {
 
           {/* Nav  on Desktop */}
           <nav className="hidden md:flex gap-2">
-            {routeList.map((route: RouteProps, i) => (
-              <Link
-                href={route.href}
-                key={i}
-                className={`text-[17px] ${buttonVariants({
-                  variant: 'ghost',
-                })}`}
-              >
-                {route.label}
+            {routeList.map(({ href, label }: RouteProps, index) => (
+              <Link key={index} href={href}>
+                <Button variant={'ghost'} className="text-lg">
+                  {label}
+                </Button>
               </Link>
             ))}
           </nav>
 
           {/* Login  on Desktop */}
           <div className="hidden md:flex gap-2">
-            <Link
-              href="/auth/login"
-              className={`border ${buttonVariants({ variant: 'outline' })}`}
-            >
-              <BiLogIn className="mr-2 w-5 h-5" />
-              Fazer Login
+            <Link href="/auth/login">
+              <Button variant={'outline'} className="border">
+                <BiLogIn className="mr-2 w-5 h-5" />
+                Fazer Login
+              </Button>
             </Link>
             <ThemeToggle />
           </div>
